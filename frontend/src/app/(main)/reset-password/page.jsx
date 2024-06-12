@@ -6,7 +6,7 @@ import { Button, Container, Paper, PasswordInput, TextInput, Title, rem } from '
 import { IconAt, IconLock } from '@tabler/icons-react';
 import { useForm } from '@mantine/form';
 import { useRouter } from 'next/navigation';
-import './resetPassword.module.css'
+import './resetpassword.module.css'
 
 const ResetPassword = () => {
 
