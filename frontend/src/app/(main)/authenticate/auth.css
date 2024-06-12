@@ -1,0 +1,21 @@
+.card
+{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 10px;
+    background-color: #070000;
+    border-radius: 10px;
+    box-shadow: 5px 10px 18px #8888884a;
+    
+}
+body
+{
+    background-color: #000000fe;
+
+}
+.bm
+{
+    color:#070000
+}

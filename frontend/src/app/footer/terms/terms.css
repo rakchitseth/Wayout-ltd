@@ -1,0 +1,21 @@
+body
+{
+  background-color: black;
+}
+
+.terms-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .terms-title {
+    font-size: 2em;
+    color: #ee2d2d;
+    }
+    
+    .terms-text {
+      font-size: 1.2em;
+      color: #ece8e8;
+  }
