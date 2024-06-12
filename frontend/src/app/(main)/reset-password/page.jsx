@@ -1,11 +1,12 @@
 'use client'
 import { enqueueSnackbar } from 'notistack';
 import React, { useRef, useState } from 'react';
-import classes from './resetpassword.module.css';
+import classes from './resetpassword.css';
 import { Button, Container, Paper, PasswordInput, TextInput, Title, rem } from '@mantine/core';
 import { IconAt, IconLock } from '@tabler/icons-react';
 import { useForm } from '@mantine/form';
 import { useRouter } from 'next/navigation';
+
 const ResetPassword = () => {
 
     const emailRef = useRef(null);
