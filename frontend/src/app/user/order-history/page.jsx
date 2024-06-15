@@ -42,7 +42,6 @@ const OrderHistory = () => {
   return (
     <Container size="lg">
       <Title order={1} align="center" my={20}>Order History</Title>
-
       {loading ? (
         <Loader />
       ) : (

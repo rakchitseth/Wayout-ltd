@@ -144,8 +144,8 @@ const ArticleCardVertical = () => {
               <Grid.Col span={9} >
                 <ActionIcon.Group>
                   {
-                    productDetails.sizes.split(',').map((size) => (
-                      <ActionIcon px={20} variant={
+                    productDetails.sizes.split(',').map((size, index) => (
+                      <ActionIcon key={index} px={20} variant={
                         selSize === size ? 'filled' : 'outline'
                       } size="lg" aria-label="Size"
                         onClick={() => setSelSize(size)}
@@ -165,8 +165,8 @@ const ArticleCardVertical = () => {
               <Grid.Col span={9} >
                 <ActionIcon.Group>
                   {
-                    productDetails.color.split(',').map((col) => (
-                      <ActionIcon  color={col} variant={'filled'} size="lg" aria-label="Size"
+                    productDetails.color.split(',').map((col,index) => (
+                      <ActionIcon key={index} color={col} variant={'filled'} size="lg" aria-label="Size"
                         onClick={() => setSelColor(col)}
                         
                       >
