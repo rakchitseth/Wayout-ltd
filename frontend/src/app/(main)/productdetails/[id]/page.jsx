@@ -166,8 +166,9 @@ const ArticleCardVertical = () => {
                 <ActionIcon.Group>
                   {
                     productDetails.color.split(',').map((col) => (
-                      <ActionIcon color={col} variant={'filled'} size="lg" aria-label="Size"
+                      <ActionIcon  color={col} variant={'filled'} size="lg" aria-label="Size"
                         onClick={() => setSelColor(col)}
+                        
                       >
                         {
                           selColor === col ? <IconCheck color="white" size={20} /> : null

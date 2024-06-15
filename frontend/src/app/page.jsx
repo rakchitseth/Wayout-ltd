@@ -125,7 +125,7 @@ const Home = () => {
         <SwiperSlide><img src="https://cdn.shopify.com/s/files/1/0514/9494/4962/files/bluorng_desktop_12.jpg?v=1714640036" alt="" /></SwiperSlide>
         {/* <SwiperSlide> <video src="/wayout.mp4"></video> </SwiperSlide> */}
       </Swiper>
-
+      <Title order={1} align="center">Collections </Title>
       <div>
         <Container p={10} size={'xl'}>
           {/* <Title order={1} align="center">The World&apos;s #1 Embroidery On A Fabric -&quot;ChikanKari&quot;</Title> */}

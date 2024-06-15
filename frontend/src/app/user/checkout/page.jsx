@@ -83,7 +83,7 @@ function CheckoutPage() {
 
                             {
                                 cartItems.map(item => (
-                                    <Flex align={'start'} justify={'space-between'} >
+                                    <Flex align={'start'} justify={'space-between'} key={item._id}>
                                         <img src={`${process.env.NEXT_PUBLIC_API_URL}/${item.image[0]}`} alt={item.name} width={50} />
                                         <Box style={{ flexGrow: 1 }}>
                                             <Text size='lg' fw={'bold'}>{item.title}</Text>

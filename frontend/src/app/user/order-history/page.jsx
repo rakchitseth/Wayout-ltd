@@ -47,7 +47,7 @@ const OrderHistory = () => {
         <Loader />
       ) : (
         paymentData.map((order, index) => (
-          <Paper padding="lg" shadow="md" p={20} withBorder>
+          <Paper padding="lg" shadow="md" p={20} withBorder key={order._id}>
             <Grid gutter="md" key={order._id} mb={20}>
               <Grid.Col span={6}>
                 <Text size='sm' c={'dimmed'}>Shipping Address</Text>

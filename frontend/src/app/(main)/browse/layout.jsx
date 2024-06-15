@@ -18,9 +18,9 @@ const priceMarks = [
     { value: 10000, label: '₹10K' },
 ];
 
-// const sizeOptions = [
-//     38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60
-// ]
+const sizeOptions = [
+    38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60
+]
 
 const availableColors = [
     {

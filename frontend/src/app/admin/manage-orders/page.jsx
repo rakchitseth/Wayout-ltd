@@ -116,7 +116,7 @@ const ManageOrders = () => {
         <Loader />
       ) : (
         paymentData.map((order, index) => (
-          <Paper mt={30} padding="lg" shadow="md" p={20} withBorder>
+          <Paper mt={30} padding="lg" shadow="md" p={20} withBorder key={order._id}>
             <Grid gutter="md" key={order._id} mb={20}>
               <Grid.Col span={6}>
                 <Text size='sm' c={'dimmed'}>Shipping Address</Text>
@@ -140,7 +140,7 @@ const ManageOrders = () => {
               data={['placed', 'shipped', 'ontheway', 'delivered']}
             />
 
-            <Timeline active={getActive(order.status)} bulletSize={24} lineWidth={2} bulletSize={30}>
+            <Timeline active={getActive(order.status)} bulletSize={24} lineWidth={2}>
               <Timeline.Item lineVariant={getLineVariant(1, order.status)} bullet={<IconCircleCheckFilled size={16} />} title="Order Placed">
                 <Text c="dimmed" size="sm">
                   Order has been placed successfully.
