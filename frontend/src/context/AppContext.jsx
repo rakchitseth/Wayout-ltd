@@ -7,11 +7,12 @@ export const AppProvider = ({ children }) => {
 
     const router = useRouter();
 
-    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+    const [currentUser, setCurrentUser] = useState(JSON.parse(typeof window !== 'undefined' ? sessionStorage.getItem('user') : null));
 
     const [loggedIn, setLoggedIn] = useState(currentUser !== null);
 
     const logout = () => {
+        if (typeof window !== 'undefined')
         sessionStorage.removeItem('user');
         setCurrentUser(null);
         setLoggedIn(false);

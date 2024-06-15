@@ -40,12 +40,14 @@ const Login = ({ setType }) => {
                         console.log(data);
                         setLoggedIn(true);
                         setCurrentUser(data);
-                        sessionStorage.setItem('user', JSON.stringify(data));
-                        // store data in cookie
+                        if (typeof window !== 'undefined') {
+                            sessionStorage.setItem('user', JSON.stringify(data));
+                            // store data in cookie
+                        }
                         document.cookie = `token=${data.token}`;
-                        if(data.role === 'admin'){
+                        if (data.role === 'admin') {
                             router.push('/admin/manageproduct');
-                        }else if(data.role === 'user'){
+                        } else if (data.role === 'user') {
                             router.push('/');
                         }
                     })
