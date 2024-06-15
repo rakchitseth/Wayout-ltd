@@ -62,7 +62,7 @@ const OrderHistory = () => {
               </Grid.Col>
             </Grid>
 
-            <Timeline active={getActive(order.status)} bulletSize={24} lineWidth={2} bulletSize={30}>
+            <Timeline active={getActive(order.status)} bulletSize={24} lineWidth={2}>
               <Timeline.Item lineVariant={getLineVariant(1, order.status)} bullet={<IconCircleCheckFilled size={16} />} title="Order Placed">
                 <Text c="dimmed" size="sm">
                   Order has been placed successfully.
