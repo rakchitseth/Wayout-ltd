@@ -10,7 +10,7 @@ const ThankYou = () => {
   const [currentUser, setCurrentUser] = useState(JSON.parse(typeof window !== 'undefined'?sessionStorage.getItem('user'):null));
   const { tutorid } = useParams();
   const location = useLocation();
-  let params = new URLSearchParams(location.search);
+  let params = new URLSearchParams(typeof window !== 'undefined' ? location.search : null);
   // console.log();
   // console.log(params.get('redirect_status'));
   // const navigate = useNavigate();
