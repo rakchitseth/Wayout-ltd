@@ -2,7 +2,6 @@
 import { useRef } from 'react';
 import { Text, Group, Button, rem, useMantineTheme } from '@mantine/core';
 import { Dropzone, MIME_TYPES } from '@mantine/dropzone';
-import { IconCloudUpload, IconX, IconDownload } from '@tabler/icons-react';
 import classes from './dropzone.module.css';
 
 export function DropzoneButton({setSelFilename}) {
