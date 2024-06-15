@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 const UserProfile = () => {
 
-    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+    const [currentUser, setCurrentUser] = useState(JSON.parse(typeof window !== 'undefined' ? sessionStorage.getItem('user') : null));
 
     const [profileData, setProfileData] = useState(null);
 
@@ -47,6 +47,7 @@ const UserProfile = () => {
             const data = await res.json();
             console.log(data);
             setCurrentUser(data);
+            if(typeof window !== 'undefined')
             sessionStorage.setItem('user', JSON.stringify(data));
 
         } else {

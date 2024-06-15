@@ -4,7 +4,7 @@ import { Container, Title, Text, Paper, Grid, Loader, Timeline } from '@mantine/
 import { IconCircleCheckFilled, IconCircleDashed, IconPackageExport, IconShoppingCart, IconTruck, IconTruckLoading } from '@tabler/icons-react';
 
 const OrderHistory = () => {
-  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+  const [currentUser, setCurrentUser] = useState(JSON.parse(typeof window !== 'undefined' ? sessionStorage.getItem('user') : null));
   const [paymentData, setPaymentData] = useState([]);
   const [loading, setLoading] = useState(false);
 

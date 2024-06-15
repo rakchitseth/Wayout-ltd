@@ -4,7 +4,7 @@ import { Button, Card, Title } from '@mantine/core';
 
 const PaymentGateway = () => {
 
-    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+    const [currentUser, setCurrentUser] = useState(JSON.parse(typeof window !== 'undefined' ? sessionStorage.getItem('user') : null));
 
     const stripe = useStripe();
     const elements = useElements();
