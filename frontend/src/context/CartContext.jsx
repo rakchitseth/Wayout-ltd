@@ -6,7 +6,7 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
     const runOnce = useRef(false);
     // console.log('cart provider');
-    const [cartItems, setCartItems] = useState(JSON.parse(sessionStorage.getItem('cartItems')) || []);
+    const [cartItems, setCartItems] = useState(JSON.parse(typeof window !== 'undefined' ? sessionStorage.getItem('cartItems') : null) || []);
     const [cartTotalAmount, setCartTotalAmount] = useState(0);
 
     const [cartOpened, toggleCart] = useDisclosure(false);
@@ -39,6 +39,7 @@ export const CartProvider = ({ children }) => {
     useEffect(() => {
         console.log('update cart items');
         // if (cartItems.length)
+        if (typeof window !== 'undefined')
             sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
     }, [cartItems]);
 
@@ -63,6 +64,7 @@ export const CartProvider = ({ children }) => {
         if (existingItem.quantity === 1) {
             const updatedCartItems = cartItems.filter((cartItem) => cartItem._id !== item._id);
             setCartItems(updatedCartItems);
+            if (typeof window !== 'undefined')
             sessionStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
         } else {
             const updatedCartItems = cartItems.map((cartItem) => {
@@ -72,6 +74,7 @@ export const CartProvider = ({ children }) => {
                 return cartItem;
             });
             setCartItems(updatedCartItems);
+            if (typeof window !== 'undefined')
             sessionStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
         }
     }

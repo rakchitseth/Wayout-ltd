@@ -29,7 +29,7 @@ const VideoPLayer = () => {
   
   return (
     <div className='video-container'>
-    <video ref={videoRef} autoplay loop playsinline  width="100%" height="100%">
+    <video ref={videoRef} autoPlay loop playsInline  width="100%" height="100%">
       <source src="https://wayoutwebapp.web.app/static/media/wayout_landmark.6d62dcd43cb5b2353d9c.mp4" type="video/mp4" />
     </video>
     </div>
