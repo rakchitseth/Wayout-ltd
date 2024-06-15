@@ -7,7 +7,7 @@ const UserAuthoriser = ({ children }) => {
 
     const router = useRouter();
 
-    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+    const [currentUser, setCurrentUser] = useState(JSON.parse(typeof window !== 'undefined'?sessionStorage.getItem('user'):null));
 
     useEffect(() => {
         if (currentUser === null && !hasRun.current) {

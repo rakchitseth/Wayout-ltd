@@ -25,7 +25,7 @@ const ArticleCardVertical = () => {
 
   const router = useRouter();
 
-  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+  const [currentUser, setCurrentUser] = useState(JSON.parse(typeof window !== 'undefined'?sessionStorage.getItem('user'): null));
 
   const fetchReviews = async () => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/review/getbyproduct/${id}`);

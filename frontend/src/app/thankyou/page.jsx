@@ -11,7 +11,7 @@ const ThankYou = () => {
 
   const hasRun = useRef();
 
-  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+  const [currentUser, setCurrentUser] = useState(JSON.parse(typeof window !== 'undefined'?sessionStorage.getItem('user'):null));
 
   let params = useSearchParams();
   const { cartItems, clearCart } = useCartContext();
@@ -38,13 +38,15 @@ const ThankYou = () => {
         details: paymentDetails,
         intentId: params.get('payment_intent'),
         items: cartItems,
-        shipping: JSON.parse(sessionStorage.getItem('shipping'))
+        shipping: JSON.parse(typeof window !== 'undefined'?sessionStorage.getItem('shipping'):null)
       })
     });
     console.log(response.status);
     if (response.status === 200) {
+      if(typeof window !== 'undefined') {
       sessionStorage.removeItem('cartItems');
       sessionStorage.removeItem('shipping');
+      }
       clearCart();
     }
     // const data = await response.json();
@@ -68,7 +70,7 @@ const ThankYou = () => {
   useEffect(() => {
     if (!hasRun.current) {
       hasRun.current = true;
-      if (params.get('redirect_status') === 'succeeded' && sessionStorage.getItem('shipping')) {
+      if (params.get('redirect_status') === 'succeeded' && (typeof window !== 'undefined'?sessionStorage.getItem('shipping'):null)) {
         savePayment();
       }
     }

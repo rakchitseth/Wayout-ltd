@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 
 const PaymentHistory = () => {
 
-  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+  const [currentUser, setCurrentUser] = useState(JSON.parse(typeof window !== 'undefined'?sessionStorage.getItem('user'):null));
 
   const [paymentData, setPaymentData] = useState([]);
 

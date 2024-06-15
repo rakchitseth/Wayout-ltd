@@ -48,7 +48,7 @@ function AdminNavbar() {
     const theme = useMantineTheme();
     const [opened, { toggle }] = useDisclosure(false);
     const [userMenuOpened, setUserMenuOpened] = useState(false);
-    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('admin')));
+    const [currentUser, setCurrentUser] = useState(JSON.parse(typeof window !== 'undefined'?sessionStorage.getItem('admin'):null));
 
     const items = tabs.map((tab) => (
         <Tabs.Tab value={tab} key={tab}>

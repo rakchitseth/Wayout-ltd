@@ -53,6 +53,7 @@ function CheckoutPage() {
                 country: 'IN',
             },
         }
+        if(typeof window !== 'undefined')
         sessionStorage.setItem('shipping', JSON.stringify(shipping));
         console.log(getCartTotalAmount());
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/create-payment-intent`, {
