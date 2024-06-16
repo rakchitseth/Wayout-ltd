@@ -23,8 +23,9 @@ export default function RootLayout({ children }) {
           defaultColorScheme="auto"
           theme={theme}>
           <CartProvider>
-            <Suspense fallback={<div>Loading...</div>}></Suspense>
+            <Suspense fallback={<div>Loading...</div>}>
             {children}
+            </Suspense>
           </CartProvider>
         </MantineProvider>
       </body>
