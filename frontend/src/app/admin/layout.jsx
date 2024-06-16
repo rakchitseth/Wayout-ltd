@@ -4,7 +4,7 @@ import { AppShell, Burger, Button, Checkbox, Group, RangeSlider, Title } from '@
 import { useDisclosure } from '@mantine/hooks';
 import React, { useState } from 'react'
 import classes from './sidebar.module.css';
-import UserAuthoriser from '@/context/UserAuth';
+// import UserAuthoriser from '@/context/UserAuth';
 import { SnackbarProvider } from 'notistack';
 import Link from 'next/link';
 import { IconUser } from '@tabler/icons-react';
@@ -48,7 +48,7 @@ const Layout = ({ children }) => {
 
     return (
         <SnackbarProvider maxSnack={3} anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>
-            <UserAuthoriser>
+            {/* <UserAuthoriser> */}
                 <AppShell
                     header={{ height: 0 }}
                     navbar={{
@@ -83,7 +83,7 @@ const Layout = ({ children }) => {
                         {children}
                     </AppShell.Main>
                 </AppShell>
-            </UserAuthoriser>
+            {/* </UserAuthoriser> */}
         </SnackbarProvider>
     )
 }

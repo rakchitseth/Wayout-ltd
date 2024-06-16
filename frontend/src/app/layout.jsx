@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { MantineProvider, createTheme } from "@mantine/core";
+import { Divider, MantineProvider, createTheme } from "@mantine/core";
 import { CartProvider } from "@/context/CartContext";
 import '@mantine/carousel/styles.css';
 import '@mantine/dates/styles.css';
@@ -22,6 +22,7 @@ export default function RootLayout({ children }) {
           defaultColorScheme="auto"
           theme={theme}>
           <CartProvider>
+            <Suspense fallback={<div>Loading...</div>}></Suspense>
             {children}
           </CartProvider>
         </MantineProvider>
