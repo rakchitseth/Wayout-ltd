@@ -4,6 +4,7 @@ import { Divider, MantineProvider, createTheme } from "@mantine/core";
 import { CartProvider } from "@/context/CartContext";
 import '@mantine/carousel/styles.css';
 import '@mantine/dates/styles.css';
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
